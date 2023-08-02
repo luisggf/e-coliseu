@@ -17,6 +17,8 @@
 
     <title>e-Coliseu</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -68,9 +70,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+
+                <!-- <li class="nav-item active">
                   <a class="nav-link" href="index.html">Campeonatos <span class="sr-only">(current)</span></a>
+                </li> -->
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Campeonatos <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item">
                   <a class="nav-link" href="about.html">Partidas</a>
                 </li>
@@ -80,27 +88,59 @@
                 <li class="nav-item">
                   <a class="nav-link" href="about.html">Jogadores</a>
                 </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="" style="display: inline-block;">
-                    <div style="display: inline-block;
-                                padding: 10px 15px;
-                                margin: 0; /* Remover margens */
-                                background-color: #ff4646;
-                                color: #ffffff;
-                                border-radius: 5px;
-                                border: 1px solid #ff4646;
-                                -webkit-transition: all 0.3s;
-                                transition: all 0.3s;">
-                      CRIAR CONTA
-                    </div>
-                  </a>
-                </li> -->
               </ul>
             </div>
-            </nav>
+          </nav>
+        </div>  
+        
+        <!-- PAROU AQUI -->
+        <!-- Popup (modal) -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document" style="max-width: 600px;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Campeonato</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- <p>Conteúdo do Popup.</p> -->
+                <!-- Campo de preenchimento -->
+                <div class="form-field" style="display: flex; flex-direction: column;">
+                  <div style="margin-bottom: 20px;">
+                    <label for="campoCampeonato">Campeonato:</label>
+                    <input type="text" class="form-control" id="campoCampeonato" placeholder="Digite aqui...">
+                  </div>
+                
+                  <div style="margin-bottom: 20px;">
+                    <label for="campoJogo">Jogo:</label>
+                    <input type="text" class="form-control" id="campoJogo" placeholder="Digite aqui...">
+                  </div>
+                
+                  <div style="margin-bottom: 20px;">
+                    <label for="campoModalidade">Modalidade:</label>
+                    <input type="text" class="form-control" id="campoModalidade" placeholder="Digite aqui...">
+                  </div>
+                
+                  <div style="margin-bottom: 20px;">
+                    <label for="campoQuantidadeTimes">Quantidade de times:</label>
+                    <input type="text" class="form-control" id="campoQuantidadeTimes" placeholder="Digite aqui...">
+                  </div>
+                </div>
+                <div class="modal-content" style="padding-left: 50px; padding-bottom: 200px;">
+                  <div class="modal-body"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Adicionar campeonato</button>
+              </div>
             </div>
-          
-            
+          </div>
+        </div>
+        <!-- Popup (modal) fim -->
+
       </header>
       <!-- end header section -->
       <!-- slider section -->
@@ -157,18 +197,6 @@
                         publicamos rankings e nossa equipe está sempre pronta
                         para atender e orientar os participantes.
                       </p>
-                      <!-- <div class="icon-container">
-                        
-                        <div>
-                          <div style="display: inline; margin-right: 30px;">
-                            <i class="fas fa-mobile-alt"> </i> Mobile
-                          </div>
-                            <i class="fas fa-desktop"></i> PC 
-                          </div>
-                          <div style="margin-right: 20px; margin-left: 30px;">
-                            <i class="fas fa-gamepad"></i> Video Game 
-                          </div>
-                      </div> -->
                       <div class="image-row owl-carousel">
                         <img src="images/Among-US.jpg.webp" alt="" />
                         <img src="images/COD-Mobile.jpg.webp" alt="" />
@@ -208,38 +236,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="carousel-item">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="detail-box">
-                      <h1>
-                        Fast & Secure <br />
-                        Web Hosting
-                      </h1>
-                      <p>
-                        Anything embarrassing hidden in the middle of text. All
-                        the Lorem Ipsuanything embarrassing hidden in the middle
-                        of text. All the Lorem Ipsumm
-                      </p>
-                      <div class="btn-box">
-                        <a href="" class="btn-1"> Read More </a>
-                        <a href="" class="btn-2"> Contact Us </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-lg-10 mx-auto">
-                        <div class="img-box">
-                          <img src="images/slider-img.png" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
           </div>
           <div class="carousel_btn-box">
             <a
@@ -337,272 +333,6 @@
     </section>
 
     <!-- end service section -->
-
-    <!-- about section -->
-
-    <!-- <section class="about_section layout_padding-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="detail-box">
-              <div class="heading_container">
-                <h2>Sobre nós</h2>
-              </div>
-              <p>
-                Bem-vindo ao e-Coliseu, sua plataforma definitiva para torneios e campeonatos de jogos online e e-sports. 
-                Nossa missão é proporcionar a melhor experiência competitiva para todos os jogadores, com organização impecável, 
-                diversão garantida e a oportunidade de se conectar com uma comunidade apaixonada por jogos. Junte-se a nós nessa 
-                emocionante jornada pelos universos virtuais!
-              </p>
-              <a href=""> Saiba mais </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-box">
-              <img src="images/dino-non-birthday-version-0.gif" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- end about section -->
-
-    <!-- server section -->
-
-    <!-- <section class="server_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="img-box">
-              <img src="images/859_win_together.jpg" alt="" />
-              <div class="play_btn">
-                <button>
-                  <i class="fa fa-play" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="detail-box">
-              <div class="heading_container">
-                <h2>Deixe nós administrarmos seu torneio</h2>
-                <p>
-                  Bem-vindo ao e-Coliseu, o seu parceiro definitivo para o
-                  gerenciamento de campeonatos e-sports! Optar por nossa
-                  aplicação é a escolha certa para garantir que você possa criar
-                  torneios de forma eficiente e bem-sucedida. Nossa plataforma
-                  intuitiva e completa oferece uma ampla gama de recursos para
-                  ajudá-lo a desenvolver torneios de e-sports personalizados de
-                  maneira fácil e organizada.
-                </p>
-              </div>
-              <a href=""> Read More </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- end server section -->
-
-    <!-- price section -->
-
-    <!-- <section class="price_section layout_padding">
-      <div class="container">
-        <div class="heading_container heading_center">
-          <h2>Our Pricing</h2>
-        </div>
-        <div class="price_container">
-          <div class="box">
-            <div class="detail-box">
-              <h2>$ <span>49</span></h2>
-              <h6>Startup</h6>
-              <ul class="price_features">
-                <li>2GB RAM</li>
-                <li>20GB SSD Cloud Storage</li>
-                <li>Weekly Backups</li>
-                <li>DDoS Protection</li>
-                <li>Full Root Access</li>
-                <li>24/7/365 Tech Support</li>
-              </ul>
-            </div>
-            <div class="btn-box">
-              <a href=""> See Detail </a>
-            </div>
-          </div>
-          <div class="box">
-            <div class="detail-box">
-              <h2>$ <span>99</span></h2>
-              <h6>Standard</h6>
-              <ul class="price_features">
-                <li>4GB RAM</li>
-                <li>50GB SSD Cloud Storage</li>
-                <li>Weekly Backups</li>
-                <li>DDoS Protection</li>
-                <li>Full Root Access</li>
-                <li>24/7/365 Tech Support</li>
-              </ul>
-            </div>
-            <div class="btn-box">
-              <a href=""> See Detail </a>
-            </div>
-          </div>
-          <div class="box">
-            <div class="detail-box">
-              <h2>$ <span>149</span></h2>
-              <h6>Business</h6>
-              <ul class="price_features">
-                <li>8GB RAM</li>
-                <li>100GB SSD Cloud Storage</li>
-                <li>Weekly Backups</li>
-                <li>DDoS Protection</li>
-                <li>Full Root Access</li>
-                <li>24/7/365 Tech Support</li>
-              </ul>
-            </div>
-            <div class="btn-box">
-              <a href=""> See Detail </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- price section -->
-
-    <!-- client section -->
-    <!-- <section class="client_section">
-      <div class="container">
-        <div class="heading_container heading_center">
-          <h2>Testimonial</h2>
-          <p>
-            Even slightly believable. If you are going to use a passage of Lorem
-            Ipsum, you need to
-          </p>
-        </div>
-      </div>
-      <div class="container px-0">
-        <div id="customCarousel2" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-10 mx-auto">
-                    <div class="box">
-                      <div class="img-box">
-                        <img src="images/client.jpg" alt="" />
-                      </div>
-                      <div class="detail-box">
-                        <div class="client_info">
-                          <div class="client_name">
-                            <h5>Morojink</h5>
-                            <h6>Customer</h6>
-                          </div>
-                          <i class="fa fa-quote-left" aria-hidden="true"></i>
-                        </div>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugia
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-10 mx-auto">
-                    <div class="box">
-                      <div class="img-box">
-                        <img src="images/client.jpg" alt="" />
-                      </div>
-                      <div class="detail-box">
-                        <div class="client_info">
-                          <div class="client_name">
-                            <h5>Morojink</h5>
-                            <h6>Customer</h6>
-                          </div>
-                          <i class="fa fa-quote-left" aria-hidden="true"></i>
-                        </div>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugia
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-10 mx-auto">
-                    <div class="box">
-                      <div class="img-box">
-                        <img src="images/client.jpg" alt="" />
-                      </div>
-                      <div class="detail-box">
-                        <div class="client_info">
-                          <div class="client_name">
-                            <h5>Morojink</h5>
-                            <h6>Customer</h6>
-                          </div>
-                          <i class="fa fa-quote-left" aria-hidden="true"></i>
-                        </div>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugia
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel_btn-box">
-            <a
-              class="carousel-control-prev"
-              href="#customCarousel2"
-              role="button"
-              data-slide="prev"
-            >
-              <i class="fa fa-angle-left" aria-hidden="true"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a
-              class="carousel-control-next"
-              href="#customCarousel2"
-              role="button"
-              data-slide="next"
-            >
-              <i class="fa fa-angle-right" aria-hidden="true"></i>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- end client section -->
 
     <!-- contact section -->
     <div style="margin: 150px"></div>
@@ -742,6 +472,10 @@
     <!-- footer section -->
 
     <!-- jQery -->
+    <!-- Adicione os arquivos JavaScript do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/custom.js"></script>
@@ -771,7 +505,6 @@
           }
         });
       });
-    </script>
-    
+    </script>   
   </body>
 </html>
