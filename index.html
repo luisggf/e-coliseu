@@ -76,17 +76,16 @@
                 </li> -->
 
                 <li class="nav-item active">
-                  <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Campeonatos <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#pop-up-modal-camp">Campeonatos <span class="sr-only">(current)</span></a>
                 </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">Partidas</a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#pop-up-modal-part">Partidas <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">Times</a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#pop-up-modal-team">Times <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">Jogadores</a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#pop-up-modal-player">Jogadores <span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -95,7 +94,7 @@
         
         <!-- PAROU AQUI -->
         <!-- Popup (modal) -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="pop-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document" style="max-width: 600px;">
             <div class="modal-content">
               <div class="modal-header">
@@ -164,7 +163,8 @@
                         localização ou nível gamer.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn-1"> Quero criar um torneio </a>
+                        <button id="scrollButton" class="btn-1">Quero criar um torneio </button>
+                        <!-- <a  class="btn-1" id="scrollButton"> Quero criar um torneio </a> -->
                         <a href="contact.html" class="btn-2"> Entre em contato </a>
                       </div>
                     </div>
@@ -284,10 +284,11 @@
                   personalizados, definindo regras, formatos, datas e categorias
                   de jogos.
                 </p>
-                <a href="">
-                  Read More
+                <a href="" data-toggle="modal" data-target="#pop-up-modal-camp">
+                  Crie seu torneio
                   <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                 </a>
+                
               </div>
             </div>
           </div>
@@ -299,12 +300,13 @@
               <div class="detail-box">
                 <h4>Gerenciamento de Partidas</h4>
                 <p>
-                  Ofereça uma plataforma para agendar, acompanhar e gerenciar as
-                  partidas dos torneios, incluindo notificações e lembretes
-                  automáticos.
+                  Ofereça uma plataforma que possibilite o acompanhamento, a criação e o gerenciamento das
+                  partidas dos torneios de forma eficiente.
+
+                  
                 </p>
-                <a href="">
-                  Read More
+                <a href="" data-toggle="modal" data-target="#pop-up-modal-part">
+                  Gerencie as partidas
                   <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                 </a>
               </div>
@@ -316,16 +318,34 @@
                 <img src="images/s3.png" alt="" />
               </div>
               <div class="detail-box">
-                <h4>Classificação e Estatísticas</h4>
+                <h4>Administração dos times</h4>
                 <p>
-                  Forneça tabelas de classificação atualizadas e estatísticas
-                  detalhadas para equipes e jogadores, incentivando a competição
-                  saudável.
+                  Permita que os técnicos obtenham todos os dados necessários para facilitar a gerência dos times, possibilitando, adição, remoção
+                  e promoção de jogadores.
                 </p>
-                <a href="">
-                  Read More
+                <a href="" data-toggle="modal" data-target="#pop-up-modal-team">
+                  Gerencie os times
                   <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                 </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/s1.png" alt="" />
+              </div>
+              <div class="detail-box">
+                <h4>Listagem de jogadores</h4>
+                <p>
+                  Permita que os usuários administrem os jogadores de dado time, possibilitando a adição, remoção e outras funcionalidades de forma
+                  prática.
+                </p>
+                <a href="" data-toggle="modal" data-target="#pop-up-modal-player">
+                  Adicione um player
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+                
               </div>
             </div>
           </div>
@@ -471,6 +491,358 @@
     </footer>
     <!-- footer section -->
 
+    <!-- MODAIS UTILIZADOS -->
+    <!-- MODAL CAMPEONATO -->
+    <div
+      class="modal fade"
+      id="pop-up-modal-camp"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Campeonato</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <p>Conteúdo do Popup.</p> -->
+            <!-- Campo de preenchimento -->
+            <div
+              class="form-field"
+              style="display: flex; flex-direction: column"
+            >
+              <div style="margin-bottom: 20px">
+                <label for="campoCampeonato">Campeonato:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoCampeonato"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoJogo">Jogo:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoJogo"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoModalidade">Modalidade:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoModalidade"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoQuantidadeTimes">Quantidade de times:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoQuantidadeTimes"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+            </div>
+            <div
+              class="modal-content"
+              style="padding-left: 50px; padding-bottom: 200px"
+            >
+              <div class="modal-body"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Adicionar campeonato
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL PARTIDA-->
+    <div
+      class="modal fade"
+      id="pop-up-modal-part"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Partida</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <p>Conteúdo do Popup.</p> -->
+            <!-- Campo de preenchimento -->
+            <div
+              class="form-field"
+              style="display: flex; flex-direction: column"
+            >
+              <div style="margin-bottom: 20px">
+                <label for="campoPartida">ID Partida:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoPartida"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoDuracao">Duração:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoDuracao"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoMapa">Mapa:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoMapa"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoCIDCampeonato">CID Campeonato:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoCIDCampeonato"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+            </div>
+            <div
+              class="modal-content"
+              style="padding-left: 50px; padding-bottom: 200px"
+            >
+              <div class="modal-body"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Adicionar partida
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL TIME -->
+    <div
+      class="modal fade"
+      id="pop-up-modal-team"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Times</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <p>Conteúdo do Popup.</p> -->
+            <!-- Campo de preenchimento -->
+            <div
+              class="form-field"
+              style="display: flex; flex-direction: column"
+            >
+              <div style="margin-bottom: 20px">
+                <label for="campoTime">ID Time:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoTime"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoNomeTime">Nome do time:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoNomeTime"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoTreinador">Treinador:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoTreinador"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+            </div>
+            <div
+              class="modal-content"
+              style="padding-left: 50px; padding-bottom: 200px"
+            >
+              <div class="modal-body"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Adicionar time
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL JOGADOR -->
+    <div
+      class="modal fade"
+      id="pop-up-modal-player"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Jogadores</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <p>Conteúdo do Popup.</p> -->
+            <!-- Campo de preenchimento -->
+            <div
+              class="form-field"
+              style="display: flex; flex-direction: column"
+            >
+              <div style="margin-bottom: 20px">
+                <label for="campoTime">Username:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoTime"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoNomeTime">Nome do time:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoNomeTime"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+
+              <div style="margin-bottom: 20px">
+                <label for="campoTreinador">Treinador:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="campoTreinador"
+                  placeholder="Digite aqui..."
+                />
+              </div>
+            </div>
+            <div
+              class="modal-content"
+              style="padding-left: 50px; padding-bottom: 200px"
+            >
+              <div class="modal-body"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Adicionar time
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popup (modal) fim -->
+
+    <!-- FIM DOS MODAIS -->
+
     <!-- jQery -->
     <!-- Adicione os arquivos JavaScript do Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -480,31 +852,11 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/login.js"></script>
-    <!-- Biblioteca Owl Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        // Inicialize o carrossel
-        $(".owl-carousel").owlCarousel({
-          loop: true, // Repetir o carrossel infinitamente
-          margin: 10, // Espaçamento entre as imagens
-          nav: false, // Mostrar botões de navegação (próximo e anterior)
-          autoplay: true, // Ativar o autoplay (variação automática das imagens)
-          autoplayTimeout: 1500, // Tempo de espera entre a variação de cada imagem (em milissegundos)
-          autoplayHoverPause: true, // Pausar a variação automática ao passar o mouse sobre o carrossel
-          responsive: {
-            0: {
-              items: 1 // Quantidade de itens a serem mostrados em telas menores (neste caso, 1 item)
-            },
-            600: {
-              items: 2 // Quantidade de itens a serem mostrados em telas com largura de 600px ou mais (neste caso, 2 itens)
-            },
-            1000: {
-              items: 4 // Quantidade de itens a serem mostrados em telas com largura de 1000px ou mais (neste caso, 4 itens)
-            }
-          }
-        });
-      });
-    </script>   
+    <script src="./js/carrousel.js"></script>
+
+    
   </body>
 </html>
+
