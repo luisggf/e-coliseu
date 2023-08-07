@@ -5,7 +5,7 @@ $(document).ready(function () {
     margin: 10, // Espaçamento entre as imagens
     nav: false, // Mostrar botões de navegação (próximo e anterior)
     autoplay: true, // Ativar o autoplay (variação automática das imagens)
-    autoplayTimeout: 1500, // Tempo de espera entre a variação de cada imagem (em milissegundos)
+    autoplayTimeout: 15000, // Tempo de espera entre a variação de cada imagem (em milissegundos)
     autoplayHoverPause: true, // Pausar a variação automática ao passar o mouse sobre o carrossel
     responsive: {
       0: {
