@@ -18,11 +18,10 @@ app.use("/", partidaRoute);
 // app.use(function(error, req, res, next){
 //   if(error.message === 'Campeonato já existe' || error.message === 'Time já existe'){
 //      return res.status(409).send(error.message);
-//   } 
+//   }
 //   if (error.message === 'Campeonato não encontrado' || error.message === 'Time não encontrado'){
 //      return res.status(404).send(error.message);
 //   }
 //   res.status(500).send(error.message);
 // });
-
 app.listen(3000);
