@@ -1084,6 +1084,7 @@ a:focus {
 /*# sourceMappingURL=style.css.map */
 
 /* MODAL DATABASE CSS */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -1093,4 +1094,18 @@ th,
 td {
   border: 1px solid #ccc;
   padding: 8px;
+}
+
+/* Custom styles for the "Delete" button */
+.delete-btn {
+  background-color: #ff0000; /* Red background color */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 6px 12px; /* Add some padding */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+}
+
+.delete-btn:hover {
+  background-color: #cc0000; /* Darker red background color on hover */
 }
