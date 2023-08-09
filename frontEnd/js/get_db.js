@@ -227,6 +227,6 @@ async function getAllUsuarios() {
 // END OF DATA REQUEST
 
 getAllUsuarios();
-// getAllTimes();
-// getAllPartidas();
-// getAllCamps();
+getAllTimes();
+getAllPartidas();
+getAllCamps();
