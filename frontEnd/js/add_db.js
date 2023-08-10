@@ -4,7 +4,6 @@
 async function handleAddUsuario() {
   const url_usuario = "http://localhost:3000/usuario";
   const nomeusuario = document.getElementById("campoUName").value;
-  console.log(nomeusuario);
   const nome = document.getElementById("campoUNome").value;
   const sobrenome = document.getElementById("campoUSobrenome").value;
   const datanascimento = document.getElementById("campoUNascimento").value;
@@ -169,8 +168,6 @@ async function handleAddCamp() {
     jogo: jogo,
     qtdtimes: parseInt(qtdtimes),
   };
-  console.log(idcamp);
-  console.log(qtdtimes);
 
   try {
     const response = await fetch("http://localhost:3000/camps", {
@@ -297,6 +294,3 @@ async function handleDeleteTeam(tidtime) {
 
 // CAMP TEAM END
 
-getAllTimes();
-getAllCamps();
-getAllPartidas();

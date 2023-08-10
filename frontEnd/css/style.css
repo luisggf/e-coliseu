@@ -1109,3 +1109,12 @@ td {
 .delete-btn:hover {
   background-color: #cc0000; /* Darker red background color on hover */
 }
+
+.btn-update {
+  background-color: #ff9900; /* Orange background color */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 6px 12px; /* Add some padding */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+}
