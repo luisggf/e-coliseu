@@ -9,11 +9,13 @@ const campeonatoRoute = require("./route/campeonatoRoute");
 const timeRoute = require("./route/timeRoute");
 const usuarioRoute = require("./route/usuarioRoute");
 const partidaRoute = require("./route/partidaRoute");
+const jogaRoute = require("./route/jogaRoute")
 
 app.use("/", campeonatoRoute);
 app.use("/", timeRoute);
 app.use("/", usuarioRoute);
 app.use("/", partidaRoute);
+app.use("/", jogaRoute);
 
 // NEW ADDITION TEST BEGIN 07/08
 app.post("/addTime", async (req, res) => {
