@@ -58,17 +58,6 @@ async function getAllCamps() {
       deleteCell.appendChild(deleteButton);
       row.appendChild(deleteCell);
 
-      // Create a cell for the update and append it to the row
-      const updateButton = document.createElement("button");
-      updateButton.textContent = "Atualizar";
-      updateButton.classList.add("btn", "btn-danger", "btn-update");
-      updateButton.addEventListener("click", () =>
-        handleUpdateCamp()
-      );
-      const updateCell = document.createElement("td");
-      updateCell.appendChild(updateButton);
-      row.appendChild(updateCell);
-
       // Append the row to the table body
       tableBody.appendChild(row);
     });
@@ -121,17 +110,6 @@ async function getAllTimes() {
       deleteCell.appendChild(deleteButton);
       row.appendChild(deleteCell);
 
-      // Create a cell for the update and append it to the row
-      const updateButton = document.createElement("button");
-      updateButton.textContent = "Atualizar";
-      updateButton.classList.add("btn", "btn-danger", "btn-update");
-      updateButton.addEventListener("click", () =>
-        handleUpdateTeam(time.idtime)
-      );
-      const updateCell = document.createElement("td");
-      updateCell.appendChild(updateButton);
-      row.appendChild(updateCell);
-
       // Append the row to the table body
       tableBody.appendChild(row);
     });
@@ -183,15 +161,6 @@ async function getAllPartidas() {
       deleteButton.setAttribute("data-id", partida.idpartida);
       deleteCell.appendChild(deleteButton);
       row.appendChild(deleteCell);
-
-      // Create a cell for the update button
-      const updateCell = document.createElement("td");
-      const updateButton = document.createElement("button");
-      updateButton.textContent = "Atualizar";
-      updateButton.classList.add("btn", "btn-danger", "btn-update");
-      updateButton.setAttribute("data-id", partida.idpartida);
-      updateCell.appendChild(updateButton);
-      row.appendChild(updateCell);
 
       // Append the row to the table body
       tableBody.appendChild(row);
@@ -246,15 +215,6 @@ async function getAllUsuarios() {
       deleteButton.setAttribute("data-id", usuario.nomeusuario);
       deleteCell.appendChild(deleteButton);
       row.appendChild(deleteCell);
-
-      //Create a cell for the update button
-      const updateCell = document.createElement("td");
-      const updateButton = document.createElement("button");
-      updateButton.textContent = "Atualizar";
-      updateButton.classList.add("btn", "btn-danger", "btn-update");
-      updateButton.setAttribute("data-id", usuario.nomeusuario);
-      updateCell.appendChild(updateButton);
-      row.appendChild(updateCell);
 
       // Append the row to the table body
       tableBody.appendChild(row);

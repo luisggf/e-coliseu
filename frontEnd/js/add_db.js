@@ -134,13 +134,10 @@ async function handleUpdateUsuario() {
   }
 }
 
-const usuariosTableBodyUpdate = document.querySelector("#usuario-table tbody");
-usuariosTableBodyUpdate.addEventListener("click", async (event) => {
-  if (event.target.classList.contains("btn-update")) {
-    const nomeusuario = event.target.getAttribute("data-id");
-    handleUpdateUsuario(nomeusuario);
-  }
-});
+const updateUsuarioButton = document.querySelector(
+  "#pop-up-modal-player .btn-update"
+);
+updateUsuarioButton.addEventListener("click", handleUpdateUsuario);
 
 // USUARIO END
 
@@ -272,13 +269,10 @@ async function handleUpdatePartida() {
   }
 }
 
-const partidasTableBodyUpdate = document.querySelector("#partidas-table tbody");
-partidasTableBodyUpdate.addEventListener("click", async (event) => {
-  if (event.target.classList.contains("btn-update")) {
-    const idpartida = event.target.getAttribute("data-id");
-    handleUpdatePartida(idpartida);
-  }
-});
+const updatePartidaButton = document.querySelector(
+  "#pop-up-modal-part .btn-update"
+);
+updatePartidaButton.addEventListener("click", handleUpdatePartida);
 
 // END PARTIDA ADDITION
 
@@ -417,13 +411,10 @@ async function handleUpdateCamp() {
   }
 }
 
-const campsTableBodyUpdate = document.querySelector("#camp-table tbody");
-campsTableBodyUpdate.addEventListener("click", async (event) => {
-  if (event.target.classList.contains("btn-update")) {
-    const idcamp = event.target.getAttribute("data-id");
-    handleUpdateCamp(idcamp);
-  }
-});
+const updateCampButton = document.querySelector(
+  "#pop-up-modal-camp .btn-update"
+);
+updateCampButton.addEventListener("click", handleUpdateCamp);
 
 // CAMP ADDITION END
 
@@ -548,11 +539,15 @@ async function handleUpdateTeam() {
   }
 }
 
-const timeTableBodyUpdate = document.querySelector("#times-table tbody");
-timeTableBodyUpdate.addEventListener("click", async (event) => {
-  if (event.target.classList.contains("btn-update")) {
-    const idtime = event.target.getAttribute("data-id");
-    handleUpdateTeam(idtime);
-  }
-});
+// const timeTableBodyUpdate = document.querySelector("#times-table tbody");
+// timeTableBodyUpdate.addEventListener("click", async (event) => {
+//   if (event.target.classList.contains("btn-update")) {
+//     const idtime = event.target.getAttribute("data-id");
+//     handleUpdateTeam(idtime);
+//   }
+// });
+const updateTeamButton = document.querySelector(
+  "#pop-up-modal-team .btn-update"
+);
+updateTeamButton.addEventListener("click", handleUpdateTeam);
 // CAMP TEAM END
