@@ -1,7 +1,7 @@
 const database = require("../infra/database");
 
 exports.getUsers = function(){
-  return database.query("SELECT * FROM USUARIO");
+  return database.query("SELECT nomeusuario, nome, sobrenome, TO_CHAR(dataNascimento, 'YYYY-MM-DD') as dataNascimento, TidTime FROM USUARIO");
 }
 
 exports.getUser = function (nomeusuario) {

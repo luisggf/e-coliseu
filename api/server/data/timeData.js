@@ -17,10 +17,10 @@ exports.saveTime = function (time) {
   );
 };
 
-exports.updateTime = function (idTime, time) {
+exports.updateTime = function (idtime, time) {
   return database.none(
     "UPDATE TEAM SET nomeTime = $1, treinador = $2, CidCamp = $3 WHERE idTime = $4",
-    [time.nometime, time.treinador, time.cidcamp, idTime]
+    [time.nometime, time.treinador, time.cidcamp, idtime]
   );
 };
 

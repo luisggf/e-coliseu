@@ -9,6 +9,9 @@ async function handleAddUsuario() {
   const datanascimento = document.getElementById("campoUNascimento").value;
   const tidtime = document.getElementById("campoUIdTime").value;
 
+  const errorMessageElement = document.getElementById("error-message-jogador");
+  errorMessageElement.textContent = '';
+
   const usuarioData = {
     nomeusuario: nomeusuario,
     nome: nome,
@@ -27,6 +30,8 @@ async function handleAddUsuario() {
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-jogador");
+      errorMessageElement.textContent = "Erro ao adicionar o usuário. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to add usuario");
     }
 
@@ -45,12 +50,16 @@ addUsuarioButton.addEventListener("click", handleAddUsuario);
 
 // Function to handle deletion of usuario
 async function handleDeleteUsuario(nomeusuario) {
+  const errorMessageElement = document.getElementById("error-message-jogador");
+  errorMessageElement.textContent = '';
   try {
     const response = await fetch(`${url_usuario}/${nomeusuario}`, {
       method: "DELETE",
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-jogador");
+      errorMessageElement.textContent = "Erro ao deletar o usuario. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to delete usuario");
     }
 
@@ -100,6 +109,8 @@ async function handleUpdateUsuario() {
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-jogador");
+      errorMessageElement.textContent = "Erro ao atualizar o usuario. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to update usuario");
     }
 
@@ -115,6 +126,8 @@ async function handleUpdateUsuario() {
       cells[3].textContent = datanascimento;
       cells[4].textContent = tidtime;
     }
+    const errorMessageElement = document.getElementById("error-message-jogador");
+    errorMessageElement.textContent = '';
     await getAllUsuarios();
   } catch (error) {
     console.error("Error updating usuario:", error);
@@ -139,6 +152,9 @@ async function handleAddPartida() {
   const mapa = document.getElementById("campomapa").value;
   const cidcamp = document.getElementById("campoIDcampeonato").value;
 
+  const errorMessageElement = document.getElementById("error-message-partida");
+    errorMessageElement.textContent = '';
+
   const partidaData = {
     idpartida: parseInt(idpartida),
     duracao: duracao,
@@ -156,6 +172,8 @@ async function handleAddPartida() {
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-partida");
+      errorMessageElement.textContent = "Erro ao adicionar a partida. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to add partida");
     }
 
@@ -174,12 +192,16 @@ addPartidaButton.addEventListener("click", handleAddPartida);
 
 // Function to handle deletion of partida
 async function handleDeletePartida(idPartida) {
+  const errorMessageElement = document.getElementById("error-message-partida");
+  errorMessageElement.textContent = '';
   try {
     const response = await fetch(`http://localhost:3000/partida/${idPartida}`, {
       method: "DELETE",
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-partida");
+      errorMessageElement.textContent = "Erro ao deletar a partida. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to delete partida");
     }
 
@@ -225,6 +247,8 @@ async function handleUpdatePartida() {
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-partida");
+      errorMessageElement.textContent = "Erro ao atualizar a partida. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to update partida");
     }
 
@@ -240,6 +264,8 @@ async function handleUpdatePartida() {
       cells[3].textContent = mapa;
       cells[4].textContent = cidcamp;
     }
+    const errorMessageElement = document.getElementById("error-message-partida");
+    errorMessageElement.textContent = '';
     await getAllPartidas();
   } catch (error) {
     console.error("Error updating partida:", error);
@@ -266,6 +292,9 @@ async function handleAddCamp() {
   const jogo = document.getElementById("campojogo").value;
   const qtdtimes = document.getElementById("campoqtdTimes").value;
 
+  const errorMessageElement = document.getElementById("error-message-camp");
+  errorMessageElement.textContent = '';
+
   const campData = {
     idcamp: parseInt(idcamp),
     nomecamp: nomeCamp,
@@ -284,6 +313,8 @@ async function handleAddCamp() {
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-camp");
+      errorMessageElement.textContent = "Erro ao adicionar o campeonato. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to add camp");
     }
 
@@ -302,12 +333,16 @@ addCampButton.addEventListener("click", handleAddCamp);
 
 // CAMP DELETE BEGIN
 async function handleDeleteCamp(idCamp) {
+  const errorMessageElement = document.getElementById("error-message-camp");
+  errorMessageElement.textContent = '';
   try {
     const response = await fetch(`http://localhost:3000/camps/${idCamp}`, {
       method: "DELETE",
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-camp");
+      errorMessageElement.textContent = "Erro ao deletar o campeonato. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to delete camp");
     }
 
@@ -356,7 +391,9 @@ async function handleUpdateCamp() {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to update campeonato");
+      const errorMessageElement = document.getElementById("error-message-camp");
+      errorMessageElement.textContent = "Erro ao atualizar o campeonato. Por favor, verifique as informações e tente novamente.";
+      throw new Error("Failed to update camp");
     }
 
     // If the usuario is deleted successfully, update the table without fetching all data again
@@ -372,6 +409,8 @@ async function handleUpdateCamp() {
       cells[4].textContent = jogo;
       cells[5].textContent = qtdtimes;
     }
+    const errorMessageElement = document.getElementById("error-message-camp");
+    errorMessageElement.textContent = '';
     await getAllCamps();
   } catch (error) {
     console.error("Error updating campeonato:", error);
@@ -397,6 +436,9 @@ async function handleAddTeam() {
   const treinador = document.getElementById("campotreinador").value;
   const cidcamp = document.getElementById("campoIdcamp").value;
 
+  const errorMessageElement = document.getElementById("error-message-team");
+    errorMessageElement.textContent = '';
+
   const teamData = {
     idtime: parseInt(idtime),
     nometime: nometime,
@@ -414,6 +456,8 @@ async function handleAddTeam() {
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-team");
+      errorMessageElement.textContent = "Erro ao adicionar o time. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to add team");
     }
 
@@ -431,12 +475,16 @@ addTeamButton.addEventListener("click", handleAddTeam);
 // BEGIN OF THE FUNCTION TO DELETE
 
 async function handleDeleteTeam(tidtime) {
+  const errorMessageElement = document.getElementById("error-message-team");
+  errorMessageElement.textContent = '';
   try {
     const response = await fetch(`http://localhost:3000/times/${tidtime}`, {
       method: "DELETE",
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-team");
+      errorMessageElement.textContent = "Erro ao deletar o time. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to delete team");
     }
 
@@ -452,7 +500,7 @@ async function handleDeleteTeam(tidtime) {
   }
 }
 
-async function handleUpdateCamp() {
+async function handleUpdateTeam() {
   const idtime = document.getElementById("campotime").value;
   const nometime = document.getElementById("campoTnome").value;
   const treinador = document.getElementById("campotreinador").value;
@@ -475,6 +523,8 @@ async function handleUpdateCamp() {
     });
 
     if (!response.ok) {
+      const errorMessageElement = document.getElementById("error-message-team");
+      errorMessageElement.textContent = "Erro ao atualizar o time. Por favor, verifique as informações e tente novamente.";
       throw new Error("Failed to update team");
     }
 
@@ -490,6 +540,8 @@ async function handleUpdateCamp() {
       cells[3].textContent = treinador;
       cells[4].textContent = cidcamp;
     }
+    const errorMessageElement = document.getElementById("error-message-team");
+    errorMessageElement.textContent = '';
     await getAllTimes();
   } catch (error) {
     console.error("Error updating team:", error);
@@ -500,7 +552,7 @@ const timeTableBodyUpdate = document.querySelector("#times-table tbody");
 timeTableBodyUpdate.addEventListener("click", async (event) => {
   if (event.target.classList.contains("btn-update")) {
     const idtime = event.target.getAttribute("data-id");
-    handleUpdateCamp(idtime);
+    handleUpdateTeam(idtime);
   }
 });
 // CAMP TEAM END
