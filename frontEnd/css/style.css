@@ -1118,3 +1118,26 @@ td {
   padding: 6px 12px; /* Add some padding */
   cursor: pointer; /* Change cursor to a pointer on hover */
 }
+
+.table-partida{
+  background-color: #0c0c0c;
+}
+
+.section-title {
+  color: #fff; /* Cor do título */
+  font-size: 24px;
+}
+
+#jogo-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #fff; /* Borda para separar o gradiente */
+  color: #fff; /* Cor do texto na tabela */
+  background: linear-gradient(to bottom, #0c0c0c, #ff9900);
+}
+
+#jogo-table th,
+#jogo-table td {
+  padding: 8px;
+  text-align: center;
+}

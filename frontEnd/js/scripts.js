@@ -14,8 +14,7 @@ for (const button of scrolltoSectionServices) {
     const scrollOffset =
       section2Element.getBoundingClientRect().top +
       window.pageYOffset -
-      headerHeight -
-      200;
+      headerHeight -0;
 
     // Scroll to Section 2 with smooth behavior and adjust the scrolling position
     window.scrollTo({ top: scrollOffset, behavior: "smooth" });

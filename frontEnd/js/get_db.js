@@ -223,9 +223,77 @@ async function getAllUsuarios() {
     console.error("Error fetching data:", error);
   }
 }
+
+async function getAllJogos() {
+  try {
+    const response = await fetch("http://localhost:3000/jogo");
+    const jogos = await response.json();
+    const tableBody = document.querySelector("#jogo-table tbody");
+
+    // Clear the existing table body
+    tableBody.innerHTML = "";
+
+    // Loop through the usuarios array and create rows for each usuario
+    jogos.forEach((jogo) => {
+      const row = document.createElement("tr");
+
+      // Create cells for each data field
+      const partidaIDCell = document.createElement("td");
+      partidaIDCell.textContent = jogo.pidpartida;
+
+      const jogadorCell = document.createElement("td");
+      jogadorCell.textContent = jogo.unomeusuario;
+
+      // Append the cells to the row
+      row.appendChild(partidaIDCell);
+      row.appendChild(jogadorCell);
+
+      //Create a cell for the delete button
+      const deleteCell = document.createElement("td");
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Deletar";
+      deleteButton.classList.add("btn", "btn-danger", "btn-delete");
+      deleteButton.setAttribute("data-id", jogo.pidpartida);
+      deleteCell.appendChild(deleteButton);
+      row.appendChild(deleteCell);
+
+      // Append the row to the table body
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+// Função para obter e exibir os dados dos jogos
+// async function getAllJogos() {
+//   try {
+//     const response = await fetch("http://localhost:3000/jogo");
+//     const jogos = await response.json();
+
+//     const gameSection = document.querySelector(".game-section");
+//     const gameContainer = document.createElement("div");
+//     gameContainer.classList.add("container");
+//     gameSection.appendChild(gameContainer);
+
+//     jogos.forEach((jogo) => {
+//       const gameDiv = document.createElement("div");
+//       gameDiv.classList.add("row");
+
+//       const gameData = document.createElement("div");
+//       gameData.textContent = `Partida ID: ${jogo.pidpartida}, Jogador: ${jogo.unomeusuario}`;
+//       gameDiv.appendChild(gameData);
+
+//       gameContainer.appendChild(gameDiv);
+//     });
+//   } catch (error) {
+//     console.error("Error fetching game data:", error);
+//   }
+// }
 // END OF DATA REQUEST
 
 getAllUsuarios();
 getAllTimes();
 getAllPartidas();
 getAllCamps();
+getAllJogos();

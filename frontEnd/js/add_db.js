@@ -539,15 +539,32 @@ async function handleUpdateTeam() {
   }
 }
 
-// const timeTableBodyUpdate = document.querySelector("#times-table tbody");
-// timeTableBodyUpdate.addEventListener("click", async (event) => {
-//   if (event.target.classList.contains("btn-update")) {
-//     const idtime = event.target.getAttribute("data-id");
-//     handleUpdateTeam(idtime);
-//   }
-// });
 const updateTeamButton = document.querySelector(
   "#pop-up-modal-team .btn-update"
 );
 updateTeamButton.addEventListener("click", handleUpdateTeam);
 // CAMP TEAM END
+
+//JOGO ADDITION
+
+async function handleDeleteJogo(pidpartida) {
+  try {
+    const response = await fetch(`http://localhost:3000/jogo/${pidpartida}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete jogo");
+    }
+
+    // If the team is deleted successfully, update the table without fetching all data again
+    const tableBody = document.querySelector("#jogo-table tbody");
+    const deletedRow = tableBody.querySelector(`tr[data-id="${pidpartida}"]`);
+    if (deletedRow) {
+      tableBody.removeChild(deletedRow);
+    }
+    await getAllJogos();
+  } catch (error) {
+    console.error("Error deleting team:", error);
+  }
+}
