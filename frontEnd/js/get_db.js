@@ -237,6 +237,9 @@ async function getAllJogos() {
     jogos.forEach((jogo) => {
       const row = document.createElement("tr");
 
+      row.setAttribute("data-id", jogo.pidpartida);
+
+
       // Create cells for each data field
       const partidaIDCell = document.createElement("td");
       partidaIDCell.textContent = jogo.pidpartida;
@@ -253,6 +256,9 @@ async function getAllJogos() {
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Deletar";
       deleteButton.classList.add("btn", "btn-danger", "btn-delete");
+      deleteButton.addEventListener("click", () =>
+        handleDeleteJogo(jogo.pidpartida)
+      );
       deleteButton.setAttribute("data-id", jogo.pidpartida);
       deleteCell.appendChild(deleteButton);
       row.appendChild(deleteCell);
@@ -265,32 +271,6 @@ async function getAllJogos() {
   }
 }
 
-// Função para obter e exibir os dados dos jogos
-// async function getAllJogos() {
-//   try {
-//     const response = await fetch("http://localhost:3000/jogo");
-//     const jogos = await response.json();
-
-//     const gameSection = document.querySelector(".game-section");
-//     const gameContainer = document.createElement("div");
-//     gameContainer.classList.add("container");
-//     gameSection.appendChild(gameContainer);
-
-//     jogos.forEach((jogo) => {
-//       const gameDiv = document.createElement("div");
-//       gameDiv.classList.add("row");
-
-//       const gameData = document.createElement("div");
-//       gameData.textContent = `Partida ID: ${jogo.pidpartida}, Jogador: ${jogo.unomeusuario}`;
-//       gameDiv.appendChild(gameData);
-
-//       gameContainer.appendChild(gameDiv);
-//     });
-//   } catch (error) {
-//     console.error("Error fetching game data:", error);
-//   }
-// }
-// END OF DATA REQUEST
 
 getAllUsuarios();
 getAllTimes();

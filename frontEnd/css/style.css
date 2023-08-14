@@ -1120,7 +1120,8 @@ td {
 }
 
 .table-partida{
-  background-color: #0c0c0c;
+  padding-top: 25px;
+  background-color: #272727;
 }
 
 .section-title {
@@ -1133,7 +1134,7 @@ td {
   width: 100%;
   border: 1px solid #fff; /* Borda para separar o gradiente */
   color: #fff; /* Cor do texto na tabela */
-  background: linear-gradient(to bottom, #0c0c0c, #ff9900);
+  background: linear-gradient(to bottom, #272727, #ff9900);
 }
 
 #jogo-table th,
