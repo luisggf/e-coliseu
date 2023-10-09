@@ -239,7 +239,6 @@ async function getAllJogos() {
 
       row.setAttribute("data-id", jogo.pidpartida);
 
-
       // Create cells for each data field
       const partidaIDCell = document.createElement("td");
       partidaIDCell.textContent = jogo.pidpartida;
@@ -270,7 +269,7 @@ async function getAllJogos() {
     console.error("Error fetching data:", error);
   }
 }
-
+// END OF DATA REQUEST
 
 getAllUsuarios();
 getAllTimes();
